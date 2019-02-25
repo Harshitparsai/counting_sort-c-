@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	cout<<"enter the number of element you wanna to sort";
+	cin>>n;
+	int a[n];
+	int m=-1;
+	for(int i=0;i<n;i++)
+	{
+		cin>>a[i];
+		m = max(m,a[i]);
+	}
+	int aux[m+1] = {0};
+	for(int i=0;i<n;i++)
+	{
+		aux[a[i]]++;
+	}
+	cout<<"the aux array of the given array is";
+	for(int i=0;i<m+1;i++)
+	{
+		cout<<aux[i]<<" ";
+	}
+	int sortedarray[n];
+	int j=0;
+	for(int i=0;i<m+1;i++)
+	{
+		int temp = aux[i];
+		while(temp--)
+		{
+			sortedarray[j]=i;
+			j++;
+		}
+		
+	}
+	cout<<"the sorted array of the given array is";
+	
+	for(int i=0;i<n;i++)
+	{
+		cout<<sortedarray[i];
+	}
+	
+	
+	
+	
+}
